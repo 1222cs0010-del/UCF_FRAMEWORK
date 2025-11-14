@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Unified Conversion Framework (UCF)
 
 Efficient, Coherent, Fair, and Conversational AI on Edge Devices.
@@ -156,3 +157,7 @@ This is a research workspace. Please:
 ---
 
 For detailed strategy, timeline, and publication plans, see `README_UCF.md`.
+=======
+# ucf_framework
+Cooking something Big ..... Comming soon
+>>>>>>> 46b00952e4a121c0d9d4064c09897a7202015b9c
