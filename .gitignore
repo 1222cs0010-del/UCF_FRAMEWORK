@@ -1,0 +1,42 @@
+# Gitignore for UCF workspace
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Conda
+.conda/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Data and checkpoints (large files)
+data/
+ckpts/
+
+# Results and logs (can be large)
+results/*.json
+results/*.csv
+results/*.log
+results/*.txt
+
+# System files
+Thumbs.db
+.env
+.local
+
+# IDE
+*.sublime-project
+*.sublime-workspace

@@ -1,0 +1,31 @@
+name: ucf
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - transformers>=4.30
+    - datasets
+    - accelerate
+    - peft
+    - sentencepiece
+    - tokenizers
+    - evaluate
+    - scikit-learn
+    - numpy
+    - scipy
+    - matplotlib
+    - tensorboard
+    - six
+    - git+https://github.com/huggingface/transformers
+
+# NOTE for Windows GPU users:
+# - Install PyTorch separately using the official stable wheel that matches your CUDA version.
+#   Example (PowerShell):
+#   conda install pytorch pytorch-cuda=11.8 -c pytorch -c nvidia
+# - For 4-bit/8-bit fine-tuning and quantization support, you may need:
+#   - bitsandbytes (pip install --no-cache-dir bitsandbytes)
+#   - a compatible CUDA toolkit and driver.
+# - Some libraries (bitsandbytes) may have special Windows support requirements; refer to their docs.

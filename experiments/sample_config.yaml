@@ -1,0 +1,9 @@
+# Sample experiment configuration for UCF
+name: sample_smoke
+baselines:
+  - distilling-step-by-step
+  - llm-awq
+  - qlora
+  - streaming-llm
+  - MobileLLM
+results_dir: results
