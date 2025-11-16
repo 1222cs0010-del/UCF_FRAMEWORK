@@ -1,0 +1,16 @@
+name: awq_env
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - cmake
+  - gcc
+  - gxx
+  - pip:
+    - accelerate==0.34.2
+    - pydantic==1.10.19
+    - transformers==4.46.0
+    - -e file:../../baselines/llm-awq

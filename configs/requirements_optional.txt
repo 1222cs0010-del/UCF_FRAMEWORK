@@ -1,0 +1,13 @@
+# Optional / platform-specific packages
+# These packages often require prebuilt wheels or native compilation and
+# are provided separately so you can choose whether to install them.
+
+# FlashAttention (v2+) - prebuilt wheels recommended
+# flash-attn
+
+# Tools used by AWQ for optimized kernels (native compile may be required)
+# - nvcc / CUDA toolkit (install via system package or NVIDIA installer)
+# - build-essential / compilers
+
+# If you plan to run AWQ kernels or TinyChat optimized kernels on edge devices,
+# follow the AWQ README and the file baselines/llm-awq/AWQ_KERNELS_MANUAL.txt

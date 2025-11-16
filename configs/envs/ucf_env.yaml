@@ -1,0 +1,19 @@
+name: ucf_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pyyaml
+  - wget
+  - git
+  - pip:
+      - torch
+      - transformers
+      - datasets
+      - wandb
+      - pytest
+      - psutil
+      - tqdm

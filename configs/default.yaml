@@ -1,0 +1,11 @@
+project:
+  name: ucf_framework
+  author: your_name_here
+  log_dir: runs/
+experiment:
+  seed: 42
+  device: auto
+  output_dir: results/
+logging:
+  use_wandb: false
+  wandb_project: ucf_framework

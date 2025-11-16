@@ -1,0 +1,30 @@
+# Unified requirements for UCF Framework (core + per-baseline Python deps)
+# This file collects common Python packages required by the baselines so you can
+# install them into a single Conda env. Some packages (torch, bitsandbytes,
+# flash-attn) may require matching CUDA/PyTorch versions or prebuilt wheels
+# — consult each baseline README for platform-specific instructions.
+
+# Core ML infra
+transformers>=4.33.0
+datasets
+accelerate
+peft
+bitsandbytes
+sentencepiece
+
+# Utilities / evaluation / logging
+wandb
+scikit-learn
+scipy
+evaluate
+psutil
+tqdm
+protobuf==3.20.*
+tensorboardX
+
+# Optional: fast attention implementations (often require matching CUDA / prebuilt wheel)
+# flash-attn
+
+# Note: For `torch` / `torchvision` / `torchaudio` we recommend installing via
+# Conda to get binaries compatible with your CUDA toolkit. Example:
+#   conda install -y pytorch torchvision torchaudio cudatoolkit=11.8 -c pytorch

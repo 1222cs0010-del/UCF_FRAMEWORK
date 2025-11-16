@@ -1,0 +1,100 @@
+# Unified Conversion Framework (UCF) Experiment Configuration
+# For Efficient, Coherent, and Fair Conversational AI on Edge Devices
+
+project:
+  name: "ucf_unified_experiment"
+  description: "Unified evaluation of all baselines for efficiency, coherence, and fairness"
+  author: "UCF Research Team"
+  log_dir: "./logs"
+  output_dir: "./results"
+
+# Hardware constraints (RTX 2000 Ada 16GB)
+hardware:
+  gpu_memory_gb: 16
+  cpu_cores: 18
+  system_memory_gb: 64
+  target_device: "edge"  # edge, desktop, cloud
+
+# Baselines to run
+baselines:
+  - distilling  # Knowledge distillation (Efficiency)
+  - awq         # Quantization (Efficiency)
+  - qlora       # Parameter-efficient fine-tuning (Efficiency)
+  - streaming   # Long-context streaming (Coherence)
+  - mobilellm   # Mobile optimization (Efficiency)
+  - geep        # Gender fairness (Fairness)
+
+# Evaluation dimensions
+evaluation:
+  efficiency:
+    enabled: true
+    metrics:
+      - model_size_mb
+      - inference_time_ms
+      - memory_usage_mb
+      - compression_ratio
+      - throughput_tokens_per_sec
+  
+  coherence:
+    enabled: true
+    metrics:
+      - long_context_ppl
+      - streaming_accuracy
+      - max_context_length
+      - coherence_score
+  
+  fairness:
+    enabled: true
+    metrics:
+      - winogender_accuracy
+      - wsc_accuracy
+      - dpr_accuracy
+      - bias_reduction
+      - glue_avg
+
+# Baseline-specific configurations
+baseline_configs:
+  distilling:
+    model: "google/t5-v1_1-base"
+    dataset: "cqa"
+    max_steps: 1000
+    batch_size: 16
+  
+  awq:
+    model: "meta-llama/Llama-2-7b-hf"
+    w_bit: 4
+    q_group_size: 128
+  
+  qlora:
+    model: "meta-llama/Llama-2-7b-hf"
+    lora_r: 16
+    lora_alpha: 32
+    max_steps: 1000
+  
+  streaming:
+    model: "meta-llama/Llama-2-7b-chat-hf"
+    max_length: 4096
+  
+  mobilellm:
+    model: "mobilellm/MobileLLM-250M"
+    batch_size: 8
+  
+  geep:
+    model: "roberta-base"
+    num_prompt_tokens: 10
+    num_samples: 10000
+
+# Logging
+logging:
+  use_wandb: true
+  wandb_project: "ucf_framework"
+  wandb_entity: null  # Set your wandb entity
+  log_level: "INFO"
+
+# Experiment settings
+experiment:
+  seed: 42
+  mode: "smoke"  # smoke or full
+  save_checkpoints: true
+  checkpoint_dir: "./ckpts"
+

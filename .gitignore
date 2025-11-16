@@ -1,7 +1,9 @@
-# Gitignore for UCF workspace
+# Gitignore for UCF Framework workspace
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
+*.so
 *.egg-info/
 .DS_Store
 .vscode/
@@ -14,9 +16,11 @@ __pycache__/
 venv/
 env/
 ENV/
+.venv/
 
 # Conda
 .conda/
+.cache/
 
 # Jupyter
 .ipynb_checkpoints/
@@ -25,12 +29,25 @@ ENV/
 # Data and checkpoints (large files)
 data/
 ckpts/
+*.lock
 
 # Results and logs (can be large)
 results/*.json
 results/*.csv
 results/*.log
 results/*.txt
+
+# Pipeline outputs
+pipeline_output/
+pipeline_output_*/
+
+# Downloaded datasets
+allenai___c4/
+ChilleD___svamp/
+Open-Orca___open_orca/
+QuixiAI___code-290k-share_gpt-vicuna/
+vicgalle___alpaca-gpt4/
+gsm8k/
 
 # System files
 Thumbs.db
@@ -40,3 +57,8 @@ Thumbs.db
 # IDE
 *.sublime-project
 *.sublime-workspace
+
+# OS
+.AppleDouble
+.LSOverride
+*.log
